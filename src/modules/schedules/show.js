@@ -19,11 +19,11 @@ export function schedulesShow({dailySchedules}) {
             const name = document.createElement("span")
 
             // Adiciona o id do agendamento
-            item.setAttribute("data-id", schedule.id.id)
+            item.setAttribute("data-id", schedule.id)
 
-            time.textContent = dayjs(schedule.id.when).format("HH:mm")
+            time.textContent = dayjs(schedule.when).format("HH:mm")
 
-            name.textContent = schedule.id.name
+            name.textContent = schedule.name
 
             // Cria o icone de cancelar
             const cancelIcon = document.createElement("img")
@@ -35,7 +35,7 @@ export function schedulesShow({dailySchedules}) {
             item.append(time, name, cancelIcon)
 
             // Obtem somente a hora
-            const hour = dayjs(schedule.id.when).hour()
+            const hour = dayjs(schedule.when).hour()
 
             //Renderizar o agendamento na sessão (Condicional)
             if (hour <= 12) {

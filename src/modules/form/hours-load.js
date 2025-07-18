@@ -10,7 +10,7 @@ export function HoursLoad({ date, dailySchedules }) {
     hours.innerHTML = ""
 
     // Obtem as horas com a datas indisponiveis
-    const unavailableHours = dailySchedules.map((schedule) => dayjs(schedule.id.when).format("HH:mm"))
+    const unavailableHours = dailySchedules.map((schedule) => dayjs(schedule.when).format("HH:mm"))
     
     const opening = openingHours.map((hour) => {
         
