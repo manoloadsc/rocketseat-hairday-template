@@ -19,7 +19,7 @@ export function schedulesShow({dailySchedules}) {
             const name = document.createElement("span")
 
             // Adiciona o id do agendamento
-            item.setAttribute("data-id", schedule.id)
+            item.setAttribute("data-id", schedule.id.id)
 
             time.textContent = dayjs(schedule.id.when).format("HH:mm")
 
@@ -30,8 +30,6 @@ export function schedulesShow({dailySchedules}) {
             cancelIcon.classList.add("cancel-icon")
             cancelIcon.setAttribute("src", "./src/assets/cancel.svg")
             cancelIcon.setAttribute("alt", "Cancelar")
-
-            console.log(schedule);
 
             // Adiciona tempo, nome e icone de cancelar
             item.append(time, name, cancelIcon)
@@ -47,8 +45,6 @@ export function schedulesShow({dailySchedules}) {
             } else {
                 periodEvening.appendChild(item)
             }
-
-
         })
         
     } catch (error) {
